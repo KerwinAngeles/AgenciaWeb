@@ -3,7 +3,6 @@ const phoneNumber = import.meta.env.VITE_PHONE_NUMBER || "8098642427";
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("numero telefono "  + phoneNumber);
     const sendButton = document.getElementById("sendButton");
 
     if (sendButton) {
