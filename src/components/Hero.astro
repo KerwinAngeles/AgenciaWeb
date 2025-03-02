@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section id="hero" class="relative pt-[80px] min-h-screen flex items-center overflow-hidden">
+  <!-- Background Animation -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="absolute top-10 left-10 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow"></div>
+      <div class="absolute bottom-10 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow" style="animation-delay: 4s;"></div>
+    </div>
+  </div>
+
+  <div class="container mx-auto mx-w-full px-4 z-10">
+    <div class="flex flex-col justify-center md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+        <h1 class="text-2xl text-center md:text-3xl lg:text-5xl font-bold font-heading leading-tight mb-6">
+          Transformamos <span class="gradient-text">ideas</span> en experiencias <span class="gradient-text">digitales</span>
+        </h1>
+        <p class="text-lg text-center text-gray-700 mb-8">
+          Somos una agencia de marketing digital que combina creatividad, estrategia y tecnología para impulsar el crecimiento de tu negocio.
+        </p>
+        <div class="flex justify-center flex-col sm:flex-row gap-4">
+          <a href="#contacto" class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition-all text-center">
+            Solicita una consulta
+          </a>
+          <a href="#servicios" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all text-center">
+            Nuestros servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

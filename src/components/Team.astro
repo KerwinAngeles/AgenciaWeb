@@ -1,0 +1,59 @@
+---
+const team = [
+  {
+    name: 'Kerwin Angeles',
+    position: 'CEO & Desarrollador Web',
+    bio: 'Con más de 2 años de experiencia creando sitios web, Kerwin Angeles lidera nuestro equipo con visión innovadora y pasión por los resultados.',
+    image: '/yo.png',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/kerwin-angeles/',
+      portafolio: 'https://kerwinangeles.vercel.app/',
+      github: 'https://github.com/KerwinAngeles'
+    }
+  }
+];
+---
+
+<section id="equipo" class="py-20 max-w-full bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Nuestro Equipo</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Somos un equipo multidisciplinario de profesionales apasionados por el marketing digital y la innovación.
+      </p>
+    </div>
+    
+    <div class="flex justify-center items-center min-h-screen bg-gray-100">
+      <div class="w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
+        {team.map((member, index) => (
+          <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+            <div class="relative mb-6 w-48 h-48 overflow-hidden rounded-full border-4 border-primary group">
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                <div class="flex space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href={member.social.linkedin} class="text-white hover:text-gray-200">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href={member.social.portafolio} class="text-white hover:text-gray-200">
+                    <i class="fa-solid fa-briefcase"></i>
+                  </a>
+                  <a href={member.social.github} class="text-white hover:text-gray-200">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-1">{member.name}</h3>
+            <p class="text-primary font-medium mb-3">{member.position}</p>
+            <p class="text-gray-600 max-w-xs">{member.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+  </div>
+</section>

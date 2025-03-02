@@ -1,0 +1,81 @@
+---
+const caseStudies = [
+  {
+    title: 'Rebranding para Startup Tecnológica',
+    category: 'Branding & Diseño',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    description: 'Renovamos la identidad visual de una startup tecnológica, logrando un aumento del 40% en reconocimiento de marca.',
+    testimonial: 'El trabajo de DigiMarkPro transformó completamente nuestra imagen. Ahora tenemos una identidad que refleja perfectamente nuestros valores y visión.',
+    client: 'María Rodríguez',
+    position: 'CEO, TechVision'
+  },
+  {
+    title: 'Campaña de Redes Sociales para E-commerce',
+    category: 'Social Media',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    description: 'Desarrollamos una estrategia integral para redes sociales que aumentó las ventas en un 75% en 6 meses.',
+    testimonial: 'Los resultados superaron nuestras expectativas. No solo aumentamos ventas, sino que construimos una comunidad fiel alrededor de nuestra marca.',
+    client: 'Carlos Méndez',
+    position: 'Director de Marketing, FashionStore'
+  },
+  {
+    title: 'Optimización SEO para Empresa de Servicios',
+    category: 'SEO & Contenidos',
+    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    description: 'Implementamos una estrategia SEO que incrementó el tráfico orgánico en un 120% y mejoró el posicionamiento para palabras clave estratégicas.',
+    testimonial: 'Gracias a DigiMarkPro, nuestro sitio web pasó de ser invisible a aparecer en la primera página de Google para nuestras palabras clave más importantes.',
+    client: 'Ana Gómez',
+    position: 'Directora General, ConsultPro'
+  }
+];
+---
+
+<section id="casos" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Casos de Éxito</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Descubre cómo hemos ayudado a nuestros clientes a alcanzar sus objetivos de negocio a través de estrategias digitales efectivas.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {caseStudies.map((study, index) => (
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+          <div class="relative">
+            <img src={study.image} alt={study.title} class="w-full h-64 object-cover" />
+            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+              {study.category}
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">{study.title}</h3>
+            <p class="text-gray-600 mb-4">{study.description}</p>
+            <div class="border-t border-gray-100 pt-4 mt-4">
+              <p class="text-gray-600 italic mb-3">"{study.testimonial}"</p>
+              <div class="flex items-center">
+                <div class="mr-3">
+                  <img 
+                    src={`https://ui-avatars.com/api/?name=${study.client.replace(' ', '+')}&background=random`} 
+                    alt={study.client} 
+                    class="w-10 h-10 rounded-full"
+                  />
+                </div>
+                <div>
+                  <p class="font-medium">{study.client}</p>
+                  <p class="text-sm text-gray-500">{study.position}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <a href="#contacto" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all inline-block">
+        ¿Quieres ser nuestro próximo caso de éxito?
+      </a>
+    </div>
+  </div>
+</section>

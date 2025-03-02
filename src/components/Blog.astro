@@ -1,0 +1,75 @@
+---
+const blogPosts = [
+  {
+    title: '10 Tendencias de Marketing Digital para 2025',
+    excerpt: 'Descubre las estrategias y tecnologías que definirán el futuro del marketing digital en el próximo año.',
+    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    date: '15 Jun 2025',
+    readTime: '5 min',
+    category: 'Tendencias'
+  },
+  {
+    title: 'Cómo Crear una Estrategia de Contenidos Efectiva',
+    excerpt: 'Aprende a desarrollar un plan de contenidos que atraiga a tu audiencia y genere conversiones para tu negocio.',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    date: '2 Jun 2025',
+    readTime: '7 min',
+    category: 'Contenidos'
+  },
+  {
+    title: 'El Impacto de la IA en el Marketing Digital',
+    excerpt: 'Análisis de cómo la inteligencia artificial está transformando las estrategias de marketing y publicidad.',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    date: '28 May 2025',
+    readTime: '6 min',
+    category: 'Tecnología'
+  }
+];
+---
+
+<section id="blog" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Blog</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Compartimos conocimientos, tendencias y estrategias sobre marketing digital para ayudarte a crecer.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {blogPosts.map((post, index) => (
+        <div 
+          class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" 
+          data-aos="fade-up" 
+          data-aos-delay={index * 100}
+        >
+          <div class="relative">
+            <img src={post.image} alt={post.title} class="w-full h-48 object-cover" />
+            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+              {post.category}
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <span>{post.date}</span>
+              <span class="mx-2">•</span>
+              <span>{post.readTime} lectura</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">{post.title}</h3>
+            <p class="text-gray-600 mb-4">{post.excerpt}</p>
+            <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+              Leer más
+              <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <a href="#" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all inline-block">
+        Ver todos los artículos
+      </a>
+    </div>
+  </div>
+</section>
